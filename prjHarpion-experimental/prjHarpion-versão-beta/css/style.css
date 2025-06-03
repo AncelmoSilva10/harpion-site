@@ -1,0 +1,520 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Work Sans', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+:root {
+    --h1-font: 5rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+
+    --bg-color: #09315c;
+    --text-color: #1a49a0;
+    --main-color: #1a49a0;
+    --other-color: #d6d6d6;
+
+    /* Novas cores */
+    --dark-color: #171725;
+    --primary-color: #073A69;
+    --secondary-color: #5A94C1;
+    --accent-color: #77A6C0;
+    --highlight-color: #B4B688;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    transition: all .50s ease;
+    background: transparent;
+}
+
+#logo {
+    width: 200px;
+}
+
+header.sticky {
+    padding: 20px 10%;
+    background: #0f3158;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+}
+
+.navbar a {
+    color: var(--other-color);
+    margin-left: 60px;
+    font-size: var(--p-font);
+    font-weight: 550;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+#menu-icon {
+    color: white;
+    font-size: 30px;
+    margin-left: 5px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: 
+    linear-gradient(
+        245.59deg,
+        #5A94C1 0%,       /* Gradiente diagonal */
+        #073A69 28.53%,
+        #171725 75.52%
+    ),
+    linear-gradient(
+        to top, /* Gradiente para cima (começa na parte inferior) */
+        rgba(255, 255, 255, 1) 0%, /* Branco no final (parte inferior) */
+        rgba(255, 255, 255, 0) 30%  /* Transparente no início (parte superior do gradiente) */
+    );
+    position: relative;
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    padding: 0 5%;
+}
+
+body {
+    background-color: rgba(255, 255, 255, 0.363);
+    color: var(--text-color);
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 40px;
+ 
+}
+
+.hero-text h1 {
+    font-family: var(--h1-font);
+    font-size: 90px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 45px;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+.hero-img img {
+    width: 450px;
+    height: auto;
+}
+
+.hero-text a {
+    display: inline-block;
+    color: white;
+    background: #4d7b95;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .55s ease;
+}
+
+.hero-text a:hover {
+    background: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.ctaa {
+    background: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.ctaa i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 40px;
+    background: #0f3158;
+    color: white;
+    font: 15px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all .50s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    border: 2px solid rgb(7, 44, 80);
+    background: transparent;
+    color: rgb(7, 44, 80);
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-text h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.gen-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    align-items: center;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.box {
+    position: relative;
+}
+
+.box img {
+    height: 550px;
+    width: 360px;
+    border-radius: 20px;
+    object-fit: cover;
+    filter: brightness(70%);
+    transition: all .3s ease cubic-bezier(.499,.05,.55,.95);
+    will-change: filter;
+    display: block;
+    transition: all .37s ease;
+}
+
+.box h6 {
+    color: white;
+    position: absolute;
+    left: 25px;
+    bottom: 95px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.box h4 {
+    color: white;
+    position: absolute;
+    left: 25px;
+    bottom: 65px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.box img:hover {
+    filter: brightness(90%) grayscale(100%);
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 4rem;
+}
+/* Estilo geral do container */
+.container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px; /* Adiciona um pouco de espaço interno */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 20px; /* Adiciona espaço entre o conteúdo e a imagem */
+}
+
+/* Estilo da seção de conteúdo */
+.content-section {
+    flex: 1; /* Ocupa o espaço restante */
+}
+
+/* Estilo do título "Quem Somos" */
+.title {
+    font-size: 5.5rem; /* Aumenta o tamanho do título */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do título */
+    color: #333; /* Cor escura para melhor visibilidade */
+}
+
+/* Estilo da descrição */
+.description {
+    font-size: 1.5rem; /* Tamanho do texto pequeno */
+    line-height: 1.6; /* Melhora a legibilidade */
+    color: #555; /* Cor um pouco mais clara, mas ainda visível */
+    margin-bottom: 20px; /* Adiciona espaço abaixo da descrição */
+}
+
+/* Estilo da seção da imagem */
+.image-section {
+    flex: 0 0 40%; /* Define a largura da imagem */
+    text-align: right; /* Alinha a imagem à direita */
+}
+
+.image-section img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o container */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Adiciona bordas arredondadas à imagem */
+}
+
+/* Estilo dos botões */
+.buttons {
+    display: flex;
+    gap: 10px; /* Adiciona espaço entre os botões */
+    margin-left: 14rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn.primary {
+    background-color: #007BFF;
+    color: white;
+}
+
+.btn.secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #0056b3;
+}
+
+.btn.secondary:hover {
+    background-color: #5a6268;
+}
+
+@media (max-width: 990px) {
+    .hero-img img {
+        width: 60%;
+        height: auto;
+    }
+}
+
+/* Estilo da seção Fale Conosco */
+.container-fale-conosco{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    height: 720px;
+    width: 100%;
+    background-color: #f1f1f1; /* Fundo azul */
+    align-items: center;
+}
+
+.fale-conosco-section {
+    background-color: #ffffff; /* Fundo azul */
+    padding: 40px 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    color: black; /* Cor do texto */
+    max-width: 600px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza a div */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.fale-conosco-section input{
+    background-color: #f1f1f1; /* Fundo azul */
+    padding: 40px 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    color: black; /* Cor do texto */
+    max-width: 600px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza a div */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.mensagem{
+    
+}
+
+
+
+/* Estilo do título */
+.section-title {
+    text-align: center; /* Centraliza o título */
+    font-size: 2rem; /* Tamanho do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+/* Estilo do formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os campos */
+}
+
+/* Estilo dos grupos de formulário */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaço entre o label e o input */
+}
+
+/* Estilo dos labels */
+.form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Estilo dos inputs e textarea */
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Estilo do botão de envio */
+.submit-btn {
+    background-color: #0056b3; /* Cor do botão */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #004080; /* Cor do botão ao passar o mouse */
+}
+/*<!--footer-->*/
+
+footer{
+    background-color: #111;
+    width: 100%;
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px ;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+}
