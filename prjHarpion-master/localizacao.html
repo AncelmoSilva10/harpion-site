@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Harpion - Localização no Vale do Silício">
+    <title>Harpion - Localização</title>
+
+    <!--css links-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/localizacao.css">
+
+    <!---box-icons link-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!---google fonts link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!--remixiconsicons link-->    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!--font awesome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+    <!-- Indicador de progresso -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!--header-->
+    <header class="header">
+        <a href="index.html" class="header__logo">
+            <img src="images/logoBrancaHarpion.png" id="logo" alt="Logo Harpion">
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <ul class="header__navbar">
+                <li><a href="index.html" class="header__navbar-link">Home</a></li>
+                <li><a href="index.html#quem-somos" class="header__navbar-link">Quem somos</a></li>
+                <li><a href="index.html#fale-conosco" class="header__navbar-link">Fale Conosco</a></li>
+                <li><a href="index.html#integrantes" class="header__navbar-link">Integrantes</a></li>
+                <li><a href="index.html#parceiros" class="header__navbar-link">Parceiros</a></li>
+            </ul>
+        </nav>
+        <div class="bx bx-menu" id="menu-icon" aria-label="Menu" role="button" tabindex="0"></div>
+    </header>
+
+    <!-- Hero section da página de localização -->
+    <section class="hero location-hero">
+        <div class="hero__text">
+            <h4 class="hero__subtitle">Nossa Presença no Vale do Silício</h4>
+            <h1 class="hero__title">Localização Harpion</h1>
+            <p class="hero__description">Estamos localizados no coração do Vale do Silício, centro de inovação tecnológica global.</p>
+            <div class="hero__buttons">
+                <a href="#mapa" class="hero__button tab-link" data-target="mapa">Ver no Mapa</a>
+                <a href="#agende-visita" class="hero__button hero__button--outline tab-link" data-target="agende-visita">Agendar Visita</a>
+            </div>
+        </div>
+
+        <div class="hero__img">
+            <img src="images/harpia2.webp" alt="Ilustração da sede Harpion no Vale do Silício">
+        </div>
+        
+        <div class="location-info">
+            <div class="location-info__item">
+                <i class="ri-map-pin-2-fill"></i>
+                <span>1600 Amphitheatre Parkway, Mountain View, CA</span>
+            </div>
+            <div class="location-info__item">
+                <i class="ri-phone-fill"></i>
+                <span>+1 (650) 253-0000</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema de navegação por abas -->
+    <div class="location-tabs">
+        <button class="location-tab active" data-target="mapa"><i class="ri-map-pin-line"></i>Nosso Escritório</button>
+        <button class="location-tab" data-target="como-chegar"><i class="ri-car-line"></i>Como Chegar</button>
+        <button class="location-tab" data-target="pontos-interesse"><i class="ri-compass-3-line"></i>Pontos de Interesse</button>
+        <button class="location-tab" data-target="agende-visita"><i class="ri-calendar-check-line"></i>Agendar Visita</button>
+    </div>
+
+    <!-- Mapa interativo -->
+    <section id="mapa" class="section section--map location-section active">
+        <h2 class="section__title">Nosso Escritório</h2>
+        <div class="location-map__container">
+            <div class="location-map__sidebar">
+                <div class="location-map__card animate">
+                    <p>Estamos localizados no coração do Vale do Silício, onde as maiores empresas de tecnologia do mundo operam e inovam diariamente.</p>
+                    <div class="location-map__features">
+                        <div class="location-map__feature">
+                            <i class="ri-building-4-line"></i>
+                            <span>Campus Moderno</span>
+                        </div>
+                        <div class="location-map__feature">
+                            <i class="ri-bus-fill"></i>
+                            <span>Transporte Fácil</span>
+                        </div>      
+                        <div class="location-map__feature">
+                            <i class="ri-restaurant-fill"></i>
+                            <span>Restaurantes Próximos</span>
+                        </div>
+                    </div>
+                    <a href="#agende-visita" class="location-map__button tab-link" data-target="agende-visita">Agende uma Visita</a>
+                </div>
+                
+                <div class="location-map__card location-map__stats">
+                    <div class="location-map__stat">
+                        <span class="location-map__stat-number">50+</span>
+                        <span class="location-map__stat-text">Startups Vizinhas</span>
+                    </div>
+                    <div class="location-map__stat">
+                        <span class="location-map__stat-number">15min</span>
+                        <span class="location-map__stat-text">Do Aeroporto</span>
+                    </div>
+                    <div class="location-map__stat">
+                        <span class="location-map__stat-number">100%</span>
+                        <span class="location-map__stat-text">Acessível</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="location-map__map-container">
+                <div id="map" class="location-map__map"></div>
+                <div class="location-map__controls">
+                    <button id="zoomIn" class="location-map__control-btn"><i class="ri-zoom-in-line"></i></button>
+                    <button id="zoomOut" class="location-map__control-btn"><i class="ri-zoom-out-line"></i></button>
+                    <button id="centerMap" class="location-map__control-btn"><i class="ri-focus-3-line"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informações adicionais -->
+    <section id="como-chegar" class="section section--location-info location-section">
+        <h2 class="section__title">Como Chegar</h2>
+        <p class="section__description">Chegue à nossa sede no Vale do Silício por diversos meios de transporte convenientes.</p>
+        
+        <div class="location-info__cards">
+            <div class="location-info__card">
+                <div class="location-info__card-icon">
+                    <i class="ri-flight-takeoff-fill"></i>
+                </div>
+                <h3>De Avião</h3>
+                <p>O Aeroporto Internacional de São Francisco (SFO) está a apenas 30 minutos de carro. O Aeroporto San Jose (SJC) é outra opção próxima.</p>
+                <div class="location-info__card-details">
+                    <div class="location-info__card-detail">
+                        <i class="ri-time-line"></i>
+                        <span>30min do SFO</span>
+                    </div>
+                    <div class="location-info__card-detail">
+                        <i class="ri-taxi-line"></i>
+                        <span>Serviço de shuttle disponível</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="location-info__card">
+                <div class="location-info__card-icon">
+                    <i class="ri-train-fill"></i>
+                </div>
+                <h3>De Trem</h3>
+                <p>A estação Caltrain de Menlo Park oferece conexões fáceis com São Francisco e San Jose.</p>
+                <div class="location-info__card-details">
+                    <div class="location-info__card-detail">
+                        <i class="ri-walk-line"></i>
+                        <span>Curta caminhada da estação</span>
+                    </div>
+                    <div class="location-info__card-detail">
+                        <i class="ri-route-line"></i>
+                        <span>Trens a cada 20min</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="location-info__card">
+                <div class="location-info__card-icon">
+                    <i class="ri-car-fill"></i>
+                </div>
+                <h3>De Carro</h3>
+                <p>Estamos na Highway 101, com estacionamento amplo e gratuito para visitantes.</p>
+                <div class="location-info__card-details">
+                    <div class="location-info__card-detail">
+                        <i class="ri-parking-box-line"></i>
+                        <span>Estacionamento gratuito</span>
+                    </div>
+                    <div class="location-info__card-detail">
+                        <i class="ri-roadster-line"></i>
+                        <span>Fácil acesso à rodovia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="location-info__map-directions">
+            <div class="location-info__directions-text">
+                <h3>Precisa de ajuda para chegar?</h3>
+                <p>Use nosso sistema de navegação para obter direções detalhadas ou entre em contato para solicitar assistência com transporte.</p>
+                <a href="#agende-visita" class="location-info__directions-btn tab-link" data-target="agende-visita">Solicitar Transporte</a>
+            </div>
+            <div class="location-info__qr-code">
+                <img src="images/qr-code-placeholder.png" alt="QR Code para navegação" onerror="this.style.display='none'">
+                <span>Escaneie para navegar</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Região ao redor -->
+    <section id="pontos-interesse" class="section section--surroundings location-section">
+        <h2 class="section__title">Explore a Região</h2>
+        
+        <div class="location-surroundings__grid">
+            <div class="location-surroundings__item">
+                <img src="images/etec2.jpg" alt="Universidade Stanford">
+                <div class="location-surroundings__overlay">
+                    <h3>Universidade Stanford</h3>
+                    <p>A 10 minutos</p>
+                </div>
+            </div>
+            
+            <div class="location-surroundings__item">
+                <img src="images/etec.jpg" alt="Google Campus">
+                <div class="location-surroundings__overlay">
+                    <h3>Google Campus</h3>
+                    <p>A 5 minutos</p>
+                </div>
+            </div>
+            
+            <div class="location-surroundings__item">
+                <img src="images/harpia2.webp" alt="Facebook Headquarters">
+                <div class="location-surroundings__overlay">
+                    <h3>Meta Headquarters</h3>
+                    <p>A 2 minutos</p>
+                </div>
+            </div>
+            
+            <div class="location-surroundings__item">
+                <img src="images/harpia.png" alt="Apple Park">
+                <div class="location-surroundings__overlay">
+                    <h3>Apple Park</h3>
+                    <p>A 15 minutos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to action -->
+    <section id="agende-visita" class="section section--contact location-section">
+        <div class="contact">
+            <div class="contact__form-container">
+                <h2 class="section__title">Venha Nos Visitar</h2>
+                <p class="section__description">Estamos sempre abertos para conhecer novos parceiros, clientes e amigos. Selecione a data e horário de sua preferência para agendar uma visita.</p>
+                
+                <div class="agenda">
+                    <div class="agenda__calendar">
+                        <div class="agenda__header">
+                            <div class="agenda__month-selector">
+                                <button class="agenda__nav-btn" id="prevMonth"><i class="ri-arrow-left-s-line"></i></button>
+                                <h3 class="agenda__current-month">Abril 2025</h3>
+                                <button class="agenda__nav-btn" id="nextMonth"><i class="ri-arrow-right-s-line"></i></button>
+                            </div>
+                        </div>
+                        <div class="agenda__weekdays">
+                            <span>Dom</span>
+                            <span>Seg</span>
+                            <span>Ter</span>
+                            <span>Qua</span>
+                            <span>Qui</span>
+                            <span>Sex</span>
+                            <span>Sáb</span>
+                        </div>
+                        <div class="agenda__days">
+                            <!-- Dias do calendário serão inseridos via JavaScript -->
+                            <div class="agenda__day agenda__day--disabled">30</div>
+                            <div class="agenda__day agenda__day--disabled">31</div>
+                            <div class="agenda__day">1</div>
+                            <div class="agenda__day">2</div>
+                            <div class="agenda__day">3</div>
+                            <div class="agenda__day">4</div>
+                            <div class="agenda__day">5</div>
+                            <div class="agenda__day">6</div>
+                            <div class="agenda__day">7</div>
+                            <div class="agenda__day">8</div>
+                            <div class="agenda__day">9</div>
+                            <div class="agenda__day">10</div>
+                            <div class="agenda__day">11</div>
+                            <div class="agenda__day">12</div>
+                            <div class="agenda__day agenda__day--today">13</div>
+                            <div class="agenda__day">14</div>
+                            <div class="agenda__day">15</div>
+                            <div class="agenda__day">16</div>
+                            <div class="agenda__day">17</div>
+                            <div class="agenda__day">18</div>
+                            <div class="agenda__day">19</div>
+                            <div class="agenda__day">20</div>
+                            <div class="agenda__day">21</div>
+                            <div class="agenda__day">22</div>
+                            <div class="agenda__day">23</div>
+                            <div class="agenda__day">24</div>
+                            <div class="agenda__day">25</div>
+                            <div class="agenda__day">26</div>
+                            <div class="agenda__day">27</div>
+                            <div class="agenda__day">28</div>
+                            <div class="agenda__day">29</div>
+                            <div class="agenda__day">30</div>
+                            <div class="agenda__day agenda__day--disabled">1</div>
+                            <div class="agenda__day agenda__day--disabled">2</div>
+                            <div class="agenda__day agenda__day--disabled">3</div>
+                        </div>
+                    </div>
+                    
+                    <div class="agenda__options">
+                        <div class="agenda__selected-date">
+                            <h3>Data selecionada:</h3>
+                            <p id="selectedDate">Selecione uma data no calendário</p>
+                        </div>
+                        
+                        <div class="agenda__time-selector">
+                            <h3>Período do dia:</h3>
+                            <div class="agenda__time-options">
+                                <button class="agenda__time-btn" data-time="morning">Manhã<span>08:00 - 12:00</span></button>
+                                <button class="agenda__time-btn" data-time="afternoon">Tarde<span>13:00 - 17:00</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="agenda__reason">
+                            <h3>Motivo da visita:</h3>
+                            <select id="visitReason" class="agenda__select">
+                                <option value="" disabled selected>Selecione um motivo</option>
+                                <option value="parceria">Proposta de Parceria</option>
+                                <option value="cliente">Interesse nos Serviços</option>
+                                <option value="conhecer">Conhecer a Empresa</option>
+                                <option value="entrevista">Entrevista</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                            <textarea id="visitReasonOther" class="agenda__textarea" placeholder="Descreva o motivo da sua visita"></textarea>
+                        </div>
+                        
+                        <a href="index.html#fale-conosco" id="confirmVisit" class="agenda__confirm-btn">Confirmar Visita</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div id="Footer" class="footer__container">
+            <div class="footer__social">
+                <a href="" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" class="footer__social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="" class="footer__social-link" aria-label="Google Plus"><i class="fa-brands fa-google-plus"></i></a>
+                <a href="" class="footer__social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <nav aria-label="Navegação do rodapé">
+                <ul class="footer__nav">
+                    <li><a href="index.html#home" class="footer__nav-link">Home</a></li>
+                    <li><a href="index.html#quem-somos" class="footer__nav-link">Quem Somos</a></li>
+                    <li><a href="index.html#integrantes" class="footer__nav-link">Integrantes</a></li>
+                    <li><a href="index.html#parceiros" class="footer__nav-link">Parceiros</a></li>
+                    <li><a href="index.html#fale-conosco" class="footer__nav-link">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">Copyright &copy;2025; Designed by <span class="footer__designer">Equipe Harpion</span></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/localizacao.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+    </script>
+    
+    <!-- Botão de volta ao topo -->
+    <a href="#" id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+</body>
+</html> 
