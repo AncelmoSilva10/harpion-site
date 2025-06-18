@@ -14,6 +14,7 @@ html {
     scrollbar-width: none; /* Para Firefox */
     -ms-overflow-style: none; /* Para Internet Explorer e Edge */
     overflow-y: scroll; 
+    overflow-x: hidden;
 }
 
 body {
@@ -216,6 +217,8 @@ body.menu-open::before {
   background: url('../images/fundo2.jpg') center/cover no-repeat;
   z-index: -1; 
   opacity: 0.3;
+  background-size: cover; /* Ajusta o fundo corretamente */
+  background-position: center;
 }
 
 .hero__text {
@@ -678,32 +681,40 @@ body.menu-open::before {
     }
     
     .hero__img img {
-        width: 350px;
+        width: 150px;
     }
 }
 
 @media (max-width: 991px) {
     .header {
-        padding: 20px 4%;
+        padding: 10px 3%;
     }
+
     
     .header__navbar-link {
-        margin-left: 25px;
+        margin-left: 5px;
     }
     
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px;
+        padding-top: 0px;
     }
     
     .hero__text {
-        max-width: 100%;
         padding: 0 5%;
     }
-    
+
+    .hero__title{
+        font-size: 4.5rem;
+    }
+
+    .hero__subtitle{
+        font-size: 1rem;
+    }
+
     .hero__img {
-        margin-top: 30px;
+        margin-top: 0px;
         text-align: center;
     }
     
@@ -713,6 +724,17 @@ body.menu-open::before {
     
     .contact {
         flex-direction: column;
+    }
+
+    .contact__form{
+        max-width: 77%;
+    }
+
+    #fale-conosco .contact__image img{
+         max-width: 100%;
+        height: auto;
+        display: block;
+        margin-right: 16rem;
     }
     
     .content-section {
@@ -727,6 +749,10 @@ body.menu-open::before {
     
     .content-section__text .section__title {
         text-align: center;
+    }
+
+    #fale-conosco .section__title{
+        margin-right: 5.2rem;
     }
     
     .section__description {
@@ -752,6 +778,10 @@ body.menu-open::before {
     #menu-icon {
         display: block;
     }
+
+    .header.sticky {
+        padding: 2.2%;
+    }
     
     .header__navbar {
         position: absolute;
@@ -761,7 +791,6 @@ body.menu-open::before {
         display: flex;
         flex-direction: column;
         background-color: var(--color-primary);
-        padding: 20px 0;
         text-align: center;
         box-shadow: var(--shadow-md);
         transition: var(--transition-fast);
@@ -791,7 +820,30 @@ body.menu-open::before {
         margin-left: 0;
         margin-top: 15px;
     }
-    
+
+    .feature-txt{
+        margin-left: 1.9rem;
+    }
+
+    .feature-content{
+        flex-direction: column;
+        padding: 0 0;
+        display: flex;
+        gap: 20px;
+        object-fit: cover;
+        
+    }
+
+
+    .form__group{
+        max-width: 100%; 
+    }
+
+    .form__submit-btn{
+        margin-left: 1rem;
+    }
+
+
     .section__buttons {
         display: flex;
         flex-direction: column;
