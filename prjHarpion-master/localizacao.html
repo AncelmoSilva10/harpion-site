@@ -36,16 +36,16 @@
     <!--header-->
     <header class="header">
         <a href="index.html" class="header__logo">
-            <img src="images/logoBrancaHarpion.png" id="logo" alt="Logo Harpion">
+            <img src="images/logo-branca.png" id="logo" alt="Logo Harpion">
         </a>
 
         <nav aria-label="Navegação principal">
             <ul class="header__navbar">
                 <li><a href="index.html" class="header__navbar-link">Home</a></li>
-                <li><a href="index.html#quem-somos" class="header__navbar-link">Quem somos</a></li>
-                <li><a href="index.html#fale-conosco" class="header__navbar-link">Fale Conosco</a></li>
-                <li><a href="index.html#integrantes" class="header__navbar-link">Integrantes</a></li>
-                <li><a href="index.html#parceiros" class="header__navbar-link">Parceiros</a></li>
+                <li><a href="#carrossel-inicio" data-carrossel="mapa" class="header__navbar-link">Escritório</a></li>
+                <li><a href="#carrossel-inicio" data-carrossel="como-chegar" class="header__navbar-link">Como Chegar</a></li>
+                <li><a href="#carrossel-inicio" data-carrossel="pontos-interesse" class="header__navbar-link">Pontos de Interesse</a></li>
+                <li><a href="#carrossel-inicio" data-carrossel="agende-visita" class="header__navbar-link">Agendar Visita</a></li>
             </ul>
         </nav>
         <div class="bx bx-menu" id="menu-icon" aria-label="Menu" role="button" tabindex="0"></div>
@@ -54,33 +54,29 @@
     <!-- Hero section da página de localização -->
     <section class="hero location-hero">
         <div class="hero__text">
-            <h4 class="hero__subtitle">Nossa Presença no Vale do Silício</h4>
+            <h4 class="hero__subtitle">Nossa Presença na ETEC Guaianases</h4>
             <h1 class="hero__title">Localização Harpion</h1>
-            <p class="hero__description">Estamos localizados no coração do Vale do Silício, centro de inovação tecnológica global.</p>
+            <p class="hero__description">Estamos localizados na ETEC Guaianases, escola técnica reconhecida no Brasil.</p>
             <div class="hero__buttons">
                 <a href="#mapa" class="hero__button tab-link" data-target="mapa">Ver no Mapa</a>
                 <a href="#agende-visita" class="hero__button hero__button--outline tab-link" data-target="agende-visita">Agendar Visita</a>
             </div>
         </div>
-
-        <div class="hero__img">
-            <img src="images/harpia2.webp" alt="Ilustração da sede Harpion no Vale do Silício">
-        </div>
         
         <div class="location-info">
             <div class="location-info__item">
                 <i class="ri-map-pin-2-fill"></i>
-                <span>1600 Amphitheatre Parkway, Mountain View, CA</span>
+                <span>Rua Feliciano de Mendonça, 290 - Guaianases, São Paulo - SP, 08460-365</span>
             </div>
             <div class="location-info__item">
                 <i class="ri-phone-fill"></i>
-                <span>+1 (650) 253-0000</span>
+                <span>(11) 2551-3547</span>
             </div>
         </div>
     </section>
 
     <!-- Sistema de navegação por abas -->
-    <div class="location-tabs">
+    <div id="carrossel-inicio" class="location-tabs">
         <button class="location-tab active" data-target="mapa"><i class="ri-map-pin-line"></i>Nosso Escritório</button>
         <button class="location-tab" data-target="como-chegar"><i class="ri-car-line"></i>Como Chegar</button>
         <button class="location-tab" data-target="pontos-interesse"><i class="ri-compass-3-line"></i>Pontos de Interesse</button>
@@ -93,7 +89,7 @@
         <div class="location-map__container">
             <div class="location-map__sidebar">
                 <div class="location-map__card animate">
-                    <p>Estamos localizados no coração do Vale do Silício, onde as maiores empresas de tecnologia do mundo operam e inovam diariamente.</p>
+                    <p>Estamos localizados na ETEC Guaianases onde as maiores empresas de tecnologia do mundo operam e inovam diariamente.</p>
                     <div class="location-map__features">
                         <div class="location-map__feature">
                             <i class="ri-building-4-line"></i>
@@ -111,20 +107,6 @@
                     <a href="#agende-visita" class="location-map__button tab-link" data-target="agende-visita">Agende uma Visita</a>
                 </div>
                 
-                <div class="location-map__card location-map__stats">
-                    <div class="location-map__stat">
-                        <span class="location-map__stat-number">50+</span>
-                        <span class="location-map__stat-text">Startups Vizinhas</span>
-                    </div>
-                    <div class="location-map__stat">
-                        <span class="location-map__stat-number">15min</span>
-                        <span class="location-map__stat-text">Do Aeroporto</span>
-                    </div>
-                    <div class="location-map__stat">
-                        <span class="location-map__stat-number">100%</span>
-                        <span class="location-map__stat-text">Acessível</span>
-                    </div>
-                </div>
             </div>
             
             <div class="location-map__map-container">
@@ -137,68 +119,70 @@
             </div>
         </div>
     </section>
-
     <!-- Informações adicionais -->
     <section id="como-chegar" class="section section--location-info location-section">
-        <h2 class="section__title">Como Chegar</h2>
-        <p class="section__description">Chegue à nossa sede no Vale do Silício por diversos meios de transporte convenientes.</p>
-        
+        <h2 class="section__title" style="color: white;">Como Chegar</h2>
+        <p class="section__description" style="color: white; margin-left: 50px;">Localizada na Zona Leste de São Paulo, a ETEC de Guaianazes é de fácil acesso por transporte público ou veículo próprio.</p>
+
         <div class="location-info__cards">
+            <!-- Ônibus -->
             <div class="location-info__card">
                 <div class="location-info__card-icon">
-                    <i class="ri-flight-takeoff-fill"></i>
+                    <i class="ri-bus-2-fill"></i>
                 </div>
-                <h3>De Avião</h3>
-                <p>O Aeroporto Internacional de São Francisco (SFO) está a apenas 30 minutos de carro. O Aeroporto San Jose (SJC) é outra opção próxima.</p>
+                <h3>De Ônibus</h3>
+                <p>A ETEC está a poucos metros do Terminal de Ônibus Guaianases, com várias linhas municipais e intermunicipais que atendem a região.</p>
                 <div class="location-info__card-details">
                     <div class="location-info__card-detail">
-                        <i class="ri-time-line"></i>
-                        <span>30min do SFO</span>
+                        <i class="ri-map-pin-line"></i>
+                        <span>5 min do Terminal Guaianases</span>
                     </div>
                     <div class="location-info__card-detail">
-                        <i class="ri-taxi-line"></i>
-                        <span>Serviço de shuttle disponível</span>
+                        <i class="ri-time-line"></i>
+                        <span>Linhas frequentes</span>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Trem -->
             <div class="location-info__card">
                 <div class="location-info__card-icon">
                     <i class="ri-train-fill"></i>
                 </div>
                 <h3>De Trem</h3>
-                <p>A estação Caltrain de Menlo Park oferece conexões fáceis com São Francisco e San Jose.</p>
+                <p>A estação Guaianases da CPTM (Linha 11 – Coral) está a cerca de 10 minutos a pé da escola.</p>
                 <div class="location-info__card-details">
                     <div class="location-info__card-detail">
                         <i class="ri-walk-line"></i>
-                        <span>Curta caminhada da estação</span>
+                        <span>10 min de caminhada</span>
                     </div>
                     <div class="location-info__card-detail">
                         <i class="ri-route-line"></i>
-                        <span>Trens a cada 20min</span>
+                        <span>Trens regulares</span>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Carro -->
             <div class="location-info__card">
                 <div class="location-info__card-icon">
                     <i class="ri-car-fill"></i>
                 </div>
                 <h3>De Carro</h3>
-                <p>Estamos na Highway 101, com estacionamento amplo e gratuito para visitantes.</p>
+                <p>O acesso é fácil pela Av. Salvador Gianetti. A escola conta com estacionamento para funcionários e visitantes.</p>
                 <div class="location-info__card-details">
                     <div class="location-info__card-detail">
                         <i class="ri-parking-box-line"></i>
-                        <span>Estacionamento gratuito</span>
+                        <span>Estacionamento disponível</span>
                     </div>
                     <div class="location-info__card-detail">
                         <i class="ri-roadster-line"></i>
-                        <span>Fácil acesso à rodovia</span>
+                        <span>Via Av. Salvador Gianetti</span>
                     </div>
                 </div>
             </div>
         </div>
-        
+            
         <div class="location-info__map-directions">
             <div class="location-info__directions-text">
                 <h3>Precisa de ajuda para chegar?</h3>
@@ -213,50 +197,59 @@
     </section>
 
     <!-- Região ao redor -->
-    <section id="pontos-interesse" class="section section--surroundings location-section">
-        <h2 class="section__title">Explore a Região</h2>
-        
-        <div class="location-surroundings__grid">
-            <div class="location-surroundings__item">
-                <img src="images/etec2.jpg" alt="Universidade Stanford">
+<section id="pontos-interesse" class="section section--surroundings location-section">
+    <h2 class="section__title">Explore a Região</h2>
+    
+    <div class="location-surroundings__grid">
+        <div class="location-surroundings__item">
+            <a href="https://www.shoppingitaquera.com.br" target="_blank">
+                <img src="images/shopping.jpg" alt="Shopping Metrô Itaquera">
                 <div class="location-surroundings__overlay">
-                    <h3>Universidade Stanford</h3>
-                    <p>A 10 minutos</p>
-                </div>
-            </div>
-            
-            <div class="location-surroundings__item">
-                <img src="images/etec.jpg" alt="Google Campus">
-                <div class="location-surroundings__overlay">
-                    <h3>Google Campus</h3>
-                    <p>A 5 minutos</p>
-                </div>
-            </div>
-            
-            <div class="location-surroundings__item">
-                <img src="images/harpia2.webp" alt="Facebook Headquarters">
-                <div class="location-surroundings__overlay">
-                    <h3>Meta Headquarters</h3>
-                    <p>A 2 minutos</p>
-                </div>
-            </div>
-            
-            <div class="location-surroundings__item">
-                <img src="images/harpia.png" alt="Apple Park">
-                <div class="location-surroundings__overlay">
-                    <h3>Apple Park</h3>
+                    <h3>Shopping Metrô Itaquera</h3>
                     <p>A 15 minutos</p>
                 </div>
-            </div>
+            </a>
         </div>
-    </section>
+
+        <div class="location-surroundings__item">
+            <a href="https://www.cptm.sp.gov.br/Pages/Home.aspx" target="_blank">
+                <img src="https://th.bing.com/th/id/OIP.Rs_qqC4el2gNcR35pDLDcgHaFj?w=283&h=212&c=7&r=0&o=7&pid=1.7&rm=3" alt="Estação Guaianases da CPTM">
+                <div class="location-surroundings__overlay">
+                    <h3>Estação Guaianases (CPTM)</h3>
+                    <p>A 10 minutos a pé</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="location-surroundings__item">
+            <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/meio_ambiente/parques/regiao_leste/index.php?p=19699" target="_blank">
+                <img src="https://saopauloparacriancas.com.br/wp-content/uploads/2021/01/sp_criancas_Parque-Lajeado.jpg" alt="Parque Linear Lajeado">
+                <div class="location-surroundings__overlay">
+                    <h3>Parque Linear Lajeado</h3>
+                    <p>A 8 minutos</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="location-surroundings__item">
+            <a href="https://www.sp.senac.br/senac-guaianases" target="_blank">
+                <img src="data:image/webp;base64,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" alt="Senac Guaianases">
+                <div class="location-surroundings__overlay">
+                    <h3>Senac Guaianases</h3>
+                    <p>A 5 minutos</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
 
     <!-- Call to action -->
     <section id="agende-visita" class="section section--contact location-section">
         <div class="contact">
             <div class="contact__form-container">
-                <h2 class="section__title">Venha Nos Visitar</h2>
-                <p class="section__description">Estamos sempre abertos para conhecer novos parceiros, clientes e amigos. Selecione a data e horário de sua preferência para agendar uma visita.</p>
+                <h2 class="section__title" style="color: white;">Venha Nos Visitar</h2>
+                <p class="section__description" style="color: white;">Estamos sempre abertos para conhecer novos parceiros, clientes e amigos. Selecione a data e horário de sua preferência para agendar uma visita.</p>
                 
                 <div class="agenda">
                     <div class="agenda__calendar">
@@ -363,10 +356,10 @@
             <nav aria-label="Navegação do rodapé">
                 <ul class="footer__nav">
                     <li><a href="index.html#home" class="footer__nav-link">Home</a></li>
-                    <li><a href="index.html#quem-somos" class="footer__nav-link">Quem Somos</a></li>
-                    <li><a href="index.html#integrantes" class="footer__nav-link">Integrantes</a></li>
-                    <li><a href="index.html#parceiros" class="footer__nav-link">Parceiros</a></li>
-                    <li><a href="index.html#fale-conosco" class="footer__nav-link">Fale Conosco</a></li>
+                    <li><a href="#carrossel-inicio" data-carrossel="mapa" class="footer__nav-link">Escritório</a></li>
+                    <li><a href="#carrossel-inicio" data-carrossel="como-chegar" class="footer__nav-link">Como Chegar</a></li>
+                    <li><a href="#carrossel-inicio" data-carrossel="pontos-interesse" class="footer__nav-link">Pontos de Interesse</a></li>
+                    <li><a href="#carrossel-inicio" data-carrossel="agende-visita" class="footer__nav-link">Agendar Visita</a></li>
                 </ul>
             </nav>
         </div>

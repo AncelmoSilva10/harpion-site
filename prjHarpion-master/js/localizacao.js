@@ -3,8 +3,8 @@
  * Integração com Leaflet e interações modernas
  */
 
-// Coordenadas do Vale do Silício
-const mapCenter = [37.4030, -122.3237];
+// Coordenadas da ETEC Guaianases
+const mapCenter = [-23.527983, -46.411019];
 let map;
 
 // Aguardar o carregamento completo do documento
@@ -183,23 +183,43 @@ function initMap() {
     // Adicionar marcador da localização principal
     const mainMarker = L.marker(mapCenter, { icon: mainIcon })
         .addTo(map)
-        .bindPopup(`<div class="custom-popup">
-            <h3>Sede Harpion</h3>
-            <p>Nossa sede principal no Vale do Silício.</p>
-            <p>Endereço: 1600 Amphitheatre Parkway, Mountain View, CA</p>
-        </div>`)
+        .bindPopup(`
+        <div style="font-family: 'Work Sans', sans-serif; font-size: 14px; color: #333; line-height: 1.5; max-width: 300px;">
+            <h3 style="margin: 0 0 8px 0; font-size: 16px; color: #2e5aac;">ETEC Guaianases</h3>
+            <p style="margin: 0 0 10px 0; color: #444;">Aonde está localizado a nossa sede.</p>
+            <p style="margin: 0; color: #444;"><strong>Endereço:</strong><br>Rua Feliciano de Mendonça, 290<br>Guaianases - SP</p>
+        </div>
+        `)
         .openPopup();
     
     // Pontos de interesse
     const pois = [
-        { coords: [37.4030, -122.3237], title: "Harpion HQ (São José dos Campos)" },
-        { coords: [37.3894, -122.0819], title: "Mountain View" },
-        { coords: [37.4439, -122.1622], title: "Palo Alto" },
-        { coords: [37.7749, -122.4194], title: "São Francisco" },
-        { coords: [37.3541, -121.9552], title: "San Jose" },
-        { coords: [37.4849, -122.2305], title: "Redwood City" }
-    ];
-    
+    {
+        coords: [-23.5456, -46.5721],
+        title: "Shopping Tatuapé",
+        description: "Um dos maiores centros comerciais da região.",
+        address: "Av. Salim Farah Maluf, 3000 - Tatuapé, São Paulo - SP"
+    },
+    {
+        coords: [-23.5329, -46.4140],
+        title: "Estação CPTM Guaianases",
+        description: "Principal estação de trem da região de Guaianases.",
+        address: "R. Comendador Roberto Ugolini, 60 - Guaianases, São Paulo - SP"
+    },
+    {
+        coords: [-23.5337, -46.4137],
+        title: "Senac Guaianases",
+        description: "Centro de formação profissional e cursos diversos.",
+        address: "Av. Francisco Marengo, 1270 - Guaianases, São Paulo - SP"
+    },
+    {
+        coords: [-23.5291, -46.4110],
+        title: "Parque Linear Guaianases",
+        description: "Área verde para lazer e caminhada na região.",
+        address: "Av. Feliciano de Mendonça - Guaianases, São Paulo - SP"
+    }
+];
+
     // Criar ícone personalizado para POIs
     const poiIcon = L.icon({
         iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
@@ -214,10 +234,12 @@ function initMap() {
     pois.forEach(poi => {
         L.marker(poi.coords, { icon: poiIcon })
             .addTo(map)
-            .bindPopup(`<div class="custom-popup">
-                <h3>${poi.title}</h3>
-                <p>Um dos nossos pontos estratégicos no Vale do Silício.</p>
-            </div>`);
+            .bindPopup(`<div style="font-family: 'Work Sans', sans-serif; font-size: 14px; color: #333; line-height: 1.5; max-width: 300px;">
+            <h3 style="margin: 0 0 8px 0; font-size: 16px; color: #2e5aac;">${poi.title}</h3>
+            <p style="margin: 0 0 10px 0; color: #444;">${poi.description}</p>
+            <p style="margin: 0; color: #444;"><strong>Endereço:</strong><br>${poi.address}</p>
+            </div>
+             `);
     });
     
     // Adicionar círculo ao redor da localização principal
@@ -665,4 +687,24 @@ function initBackToTop() {
             behavior: 'smooth'
         });
     });
+
+    document.querySelectorAll('.header__navbar-link[data-carrossel], .footer__nav-link[data-carrossel]')
+    .forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // 1. Scroll até o início do carrossel
+            const destino = document.querySelector('#carrossel-inicio');
+            if (destino) {
+                destino.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // 2. Simula o clique na aba correspondente
+            const alvo = this.getAttribute('data-carrossel');
+            const botao = document.querySelector(`.location-tab[data-target="${alvo}"]`);
+            if (botao) botao.click();
+        });
+
+});
+
 } 
