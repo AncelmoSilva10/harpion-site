@@ -1410,3 +1410,10 @@ body.menu-open::before {
         max-width: 100%;
     }
 }
+
+.form__success-msg {
+  color: green;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}

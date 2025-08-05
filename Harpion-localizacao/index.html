@@ -461,6 +461,41 @@
                     </div>
                     <button type="submit" class="form__submit-btn">Enviar Mensagem</button>
                 </form>
+                <div id="mensagem-sucesso" style="display: none;" class="form__success-msg">
+  Sua mensagem foi enviada com sucesso!
+</div>
+
+<script>
+  const form = document.querySelector('.contact__form');
+  const mensagem = document.getElementById('mensagem-sucesso');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const dados = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/ancelmo886.csgo@gmail.com", {
+      method: "POST",
+      body: dados,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        mensagem.style.display = 'block';
+        setTimeout(() => {
+          mensagem.style.display = 'none';
+        }, 5000);
+      } else {
+        alert("Erro ao enviar. Tente novamente.");
+      }
+    }).catch(error => {
+      alert("Erro ao enviar: " + error.message);
+    });
+  });
+</script>
+
             </div>
             <div class="contact__image">
                 <img src="images/logo-harpion.png" alt="Imagem de um livro representando conhecimento">
