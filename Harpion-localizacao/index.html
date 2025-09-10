@@ -416,6 +416,8 @@
   Sua mensagem foi enviada com sucesso!
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
   const form = document.querySelector('.contact__form');
   const mensagem = document.getElementById('mensagem-sucesso');
@@ -433,6 +435,11 @@
       }
     }).then(response => {
       if (response.ok) {
+            Swal.fire({
+      title: "Enviada!",
+      text: "Sua mensagem foi enviada!",
+      icon: "success"
+    });
         form.reset();
         mensagem.style.display = 'block';
         setTimeout(() => {
@@ -446,6 +453,7 @@
     });
   });
 </script>
+
 
             </div>
             <div class="contact__image">
