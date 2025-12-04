@@ -394,7 +394,7 @@
         <div class="contact">
             <div class="contact__form-container">
                 <h2 class="section__title">Fale Conosco</h2>
-                <form action="https://formsubmit.co/harpionteam@gmail.com" class="contact__form" aria-label="Formulário de contato" method="post">
+                <form action="https://formspree.io/f/mpwvlqql" class="contact__form" aria-label="Formulário de contato" method="post">
                     <div class="form__group">
                         <label for="nome" class="form__label">Nome:</label>
                         <input type="text" id="nome" name="nome" class="form__input" placeholder="Digite seu nome"
@@ -413,7 +413,6 @@
                     <button type="submit" class="form__submit-btn">Enviar Mensagem</button>
                 </form>
                 <div id="mensagem-sucesso" style="display: none;" class="form__success-msg">
-  Sua mensagem foi enviada com sucesso!
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -427,7 +426,7 @@
 
     const dados = new FormData(form);
 
-    fetch("https://formsubmit.co/ajax/harpionteam@gmail.com", {
+    fetch("https://formspree.io/f/mpwvlqql", {
       method: "POST",
       body: dados,
       headers: {
@@ -435,16 +434,18 @@
       }
     }).then(response => {
       if (response.ok) {
-            Swal.fire({
-      title: "Enviada!",
-      text: "Sua mensagem foi enviada!",
-      icon: "success"
-    });
+        Swal.fire({
+          title: "Enviada!",
+          text: "Sua mensagem foi enviada!",
+          icon: "success"
+        });
         form.reset();
-        mensagem.style.display = 'block';
-        setTimeout(() => {
-          mensagem.style.display = 'none';
-        }, 5000);
+        if (mensagem) {
+            mensagem.style.display = 'block';
+            setTimeout(() => {
+              mensagem.style.display = 'none';
+            }, 5000);
+        }
       } else {
         alert("Erro ao enviar. Tente novamente.");
       }
