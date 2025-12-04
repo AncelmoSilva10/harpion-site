@@ -419,7 +419,6 @@
 
 <script>
   const form = document.querySelector('.contact__form');
-  const mensagem = document.getElementById('mensagem-sucesso');
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -440,12 +439,6 @@
           icon: "success"
         });
         form.reset();
-        if (mensagem) {
-            mensagem.style.display = 'block';
-            setTimeout(() => {
-              mensagem.style.display = 'none';
-            }, 5000);
-        }
       } else {
         alert("Erro ao enviar. Tente novamente.");
       }
